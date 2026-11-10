@@ -18,7 +18,9 @@ async function createUser(page) {
   }
   await passwordInput.fill('123456');
   await page.getByRole('button', { name: 'Continue' }).click();
-  console.log(`Created account with email: test${emailId}@gmail.com`);
+  const email = `test${emailId}@gmail.com`;
+  console.log(`Created account with email: ${email}`);
+  return email;
 }
 
 module.exports = { createUser };
